@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello_react</title>
+    <style>
+        .title{
+            background-color: lightcoral;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<!--prepare for a container-->
+    <div id="test"></div>
+<!--    1. add the core-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+<!--    2. add react DOM-->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    3. add the babel : change jsx -> js-->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        const myId = 'aTgUiGu'
+        const myData = 'HeLlo,rEaCt'
+        //1.create vir-DOM
+        //using className for style
+        const VDOM = (
+            //if there are more than one label, need to be
+            //included in div
+            <div>
+                <h2 className="title" id={myId.toLowerCase()}>
+                    //using style={{key:value}}
+                    <span style={{color:'white',fontSize:'29px'}}>{myData.toLowerCase()}</span>
+                </h2>
+                <h2 className="title" id={myId.toUpperCase()}>
+                    //using style={{key:value}}
+                    <span style={{color:'white',fontSize:'29px'}}>{myData.toLowerCase()}</span>
+                </h2>
+                <input type="text"/>
+            </div>
+            //if begin with abc -> to find html labels
+            //if begin with ABC -> to find react labels
+        )
+        //2.to page
+        ReactDOM.render(VDOM,document.getElementById('test'))
+
+    </script>
+</body>
+</html>
