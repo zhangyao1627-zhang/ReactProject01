@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello_react</title>
+    <style>
+        .title{
+            background-color: lightcoral;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<!--prepare for a container-->
+<div id="test"></div>
+<!--    1. add the core-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!--    2. add react DOM-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    3. add the babel : change jsx -> js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    //1.create the function, Uppercase the first
+    function Demo(){
+        return <h2>The first page function part</h2>
+    }
+    //2.make it to the page part
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+
+</script>
+</body>
+</html>

@@ -42,6 +42,18 @@
             //if begin with abc -> to find html labels
             //if begin with ABC -> to find react labels
         )
+        const data = ['Angular', 'React', 'Vue']
+        const VDOM1 = (
+            <div>
+                <ul>
+                    {
+                        data.map((item,index)=>{
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                </ul>
+            </div>
+        )
         //2.to page
         ReactDOM.render(VDOM,document.getElementById('test'))
 
