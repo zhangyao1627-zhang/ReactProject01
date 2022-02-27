@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello_react</title>
+    <style>
+        .title{
+            background-color: lightcoral;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<!--prepare for a container-->
+<div id="test"></div>
+<!--    1. add the core-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!--    2. add react DOM-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    3. add the babel : change jsx -> js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Weather extends React.Component{
+        //state
+        state = {isHot: false, wind:'wind'}
+
+        render() {
+            return <h1 onClick={this.changeWeather}>state {this.state.isHot ? '01':'02'}</h1>
+        }
+
+        changeWeather = () => {
+            const isHot = this.state.isHot
+            this.setState({isHot: !isHot})
+        }
+    }
+    ReactDOM.render(<Weather/>,document.getElementById('test'))
+
+</script>
+</body>
+</html>
